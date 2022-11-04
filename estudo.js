@@ -1,3 +1,5 @@
+
+
 let tabuada = 8;
 
 function escreva(){
@@ -29,51 +31,40 @@ function mostraTabuada(){
     }
 }
 function moeda(atual){
-return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-    
+    return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 }
 function total(){
     let v = document.getElementById("valor").value;
     let j = document.getElementById("juros").value;
     let t = document.getElementById("meses").value;
     if (!Number(v)){
-       alert("o campo valor deve ser números");
-       document.getElementById("valor").value = "";
-       document.getElementById("valor").focus();
+        alert("O campo valor deve ser números");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
         return
     }
     if (!Number(j)){
-        alert("o campo juros deve ser números");
+        alert("O campo juros deve ser números");
         document.getElementById("juros").value = "";
         document.getElementById("juros").focus();
-         return
-     }
-     if (!Number(t)){
-        alert("o campo meses deve ser números");
+        return
+    }
+    if (!Number(t)){
+        alert("O campo meses deve ser números");
         document.getElementById("meses").value = "";
         document.getElementById("meses").focus();
-         return
-     }
+        return
+    }
+
     let r = 0;
+    let texto = "";
     for(let i =1; i <=t; i++){
         r = v * (1 + (j/100));
-        document.write("Mês " + i + " - valor: " + moeda(r) + "<br>");
+        //document.write("Mês " + i + " - valor: " + moeda(r) + "<br>");
+        texto += "Mês " + i + ": " + moeda(r) + "<br>";
         v = r;
     }
-    document.write("Resultado: " + moeda(r));
+    document.getElementById("mes").innerHTML = texto;
+    document.getElementById("total").innerHTML = moeda(r);
+    //document.write("Resultado: " + moeda(r));
 }
-
-function jota (){
-    let n1 = document.getElementById("b1").value;
-    let n2 = document.getElementById("b2").value;
-    let n3 = document.getElementById("b3").value;
-    let n4 = document.getElementById("b4").value;
-
-    let r = Number(n1)+Number(n2)+Number(n3)+Number(n4);
-
-    document.getElementById("result").innerHTML = "soma:" + r;
-
-
-
-}
-

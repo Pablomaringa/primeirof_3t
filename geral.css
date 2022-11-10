@@ -1,15 +1,26 @@
 .calculadora {
-  background: rgb(187, 153, 160);
+  background: rgb(36, 240, 223);
   width: 200px;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
+  box-shadow: 6px 6px rgb(88, 95, 95);
 }
 .calculadora input {
-  background: rgb(59, 54, 54);
+  background: rgb(8, 41, 31);
   color: rgb(140, 200, 202);
   padding: 5px;
   border-radius: 5px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  
+}
+.calculadora input:focus{
+  background: rgb(255, 255, 255);
+  color: rgb(140, 200, 202);
+
 }
 #spTotal {
   background: black;
